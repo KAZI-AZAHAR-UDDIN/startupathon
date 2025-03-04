@@ -7,15 +7,18 @@ import completers from './routes/api/completers.js';
 import founders from './routes/api/founders.js';
 import subscribers from './routes/api/subscribers.js';
 import path from "path";
+import { fileURLToPath } from "url";
+
 
 dotenv.config();
 connectDB();
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 const app = express();
 
-// Middleware
+
 app.use(cors());
 app.use(express.json());
 
@@ -24,20 +27,21 @@ app.use('/api/challenges', challenges);
 app.use('/api/completers', completers);
 app.use('/api/founders', founders);
 app.use('/api/subscribers', subscribers);
-// Add other routes similarly
+
 
 
 
 
 if (process.env.NODE_ENV === "production") {
-  // Set up the static file serving for the frontend
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  
+  app.use(express.static(path.join(__dirname, "../backend/public"))); 
 
-  // Handle all routes by sending the index.html file of the React app
+ 
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+    res.sendFile(path.join(__dirname, "../backend/public/index.html"));
   });
 }
+
 
 const PORT = process.env.PORT || 5000;
 

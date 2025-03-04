@@ -6,11 +6,11 @@ const ChallengeSchema = new mongoose.Schema({
   deadline: { 
     type: Date, 
     required: true, 
-    get: (date) => date.toISOString().split('T')[0]  // ✅ Ensure only `YYYY-MM-DD`
+    get: (date) => date.toISOString().split('T')[0]  
   },
   description: { type: String, required: true },
   status: { type: String, default: 'Visible' }
-}, { timestamps: true, toJSON: { getters: true } });  // ✅ Enable get() function for API response
+}, { timestamps: true, toJSON: { getters: true } });  
 
 export default mongoose.model('Challenge', ChallengeSchema);
 

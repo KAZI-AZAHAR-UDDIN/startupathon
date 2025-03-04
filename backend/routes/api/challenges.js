@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
         currentPage: pageNum
       });
     } catch (err) {
-      console.error('Error in GET /api/challenges:', err); // Better error logging
+      console.error('Error in GET /api/challenges:', err); 
       res.status(500).json({ error: err.message });
     }
   });
@@ -50,8 +50,8 @@ router.post('/', async (req, res) => {
     }
   
     const deadlineDate = new Date(deadline);
-    const today = new Date();   // ✅ Define today
-    today.setHours(0, 0, 0, 0); // ✅ Ensure accurate comparison
+    const today = new Date();   
+    today.setHours(0, 0, 0, 0); 
 
     if (isNaN(deadlineDate.getTime())) {
       return res.status(400).json({ error: 'Invalid deadline format.' });
