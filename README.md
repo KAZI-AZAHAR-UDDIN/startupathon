@@ -1,7 +1,7 @@
 <h1 align="center"># Startupathon Platform 🚀</h1>
 
-![Platform Home Page](public/homepage.png)
-![Platform ](public/admindashboard.png)
+![Platform Home Page](/frontend/public/homepage.png)
+![Platform ](/frontend/public/admindashboard.png)
 
 A full-stack platform connecting aspiring founders with startup challenges, resources, and mentorship opportunities.
 
@@ -97,10 +97,11 @@ Endpoint	Method	Description
 /api/challenges	GET	List all challenges
 /api/founders	POST	Create new founder
 /api/subscribers/:id	DELETE	Remove subscriber
+
+##
 Installation ⚙️
 
-
-## Clone repository:
+Clone repository:
 
 ```
 git clone https://github.com/KAZI-AZAHAR-UDDIN/startupathon.git
@@ -114,6 +115,8 @@ cd frontend && npm install
 Start development server:
 ```
 npm run dev
+```
+```
 
 ## UI Guidelines 🎨
 Maintained Styles

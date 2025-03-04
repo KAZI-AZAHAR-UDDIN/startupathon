@@ -6,10 +6,15 @@ import challenges from './routes/api/challenges.js';
 import completers from './routes/api/completers.js';
 import founders from './routes/api/founders.js';
 import subscribers from './routes/api/subscribers.js';
+import { fileURLToPath } from 'url';
 import path from "path";
 
 dotenv.config();
 connectDB();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, 'public')));
 
 const app = express();
 
@@ -25,17 +30,11 @@ app.use('/api/subscribers', subscribers);
 // Add other routes similarly
 
 
-// Serve React static files in production
-if (process.env.NODE_ENV === "production") {
-  // Set up the static file serving for the frontend
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-  // Handle all routes by sending the index.html file of the React app
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
-  });
-}
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 const PORT = process.env.PORT || 5000;
 
