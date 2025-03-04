@@ -1,9 +1,18 @@
 <h1 align="center"># Startupathon Platform 🚀</h1>
 
+
+## Screenshots
+
 ![Platform Home Page](/frontend/public/homepage.png)
 ![Platform ](/frontend/public/admindashboard.png)
 
+
+## 🎉 Live Demo
+Check out the live applications:
+
+Startupathon Platform : https://startupathon.onrender.com
 A full-stack platform connecting aspiring founders with startup challenges, resources, and mentorship opportunities.
+
 
 ## Features ✨
 
