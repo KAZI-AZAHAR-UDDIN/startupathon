@@ -117,7 +117,7 @@ Start development server:
 npm run dev
 ```
 ```
-
+`
 ## UI Guidelines 🎨
 Maintained Styles
 Glassmorphism effects
